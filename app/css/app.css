@@ -1,0 +1,112 @@
+body {
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	/*black*/
+	/*background-color: black;*/
+	/*white*/
+	background-color: white;
+	
+}
+
+.kb-key-icon{
+	height: 60px;
+}
+.kb-delete {
+	background-image: url(../img/delete.png)!important;
+	background-repeat: no-repeat;
+	background-size: 50px;
+}
+.kb-bg {
+	/*black*/
+	/*background-color: black;*/
+	/*white*/
+	background-color: #F8F8F8;
+	overflow: hidden;
+	-webkit-transition : height 1s;
+/*	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	box-shadow: 0px 0px 15px black,inset 10px 10px 30px #CCC,inset 20px 20px 100px white;*/
+
+	/*blue*/
+	/*background-color: #515151;*/
+	/*background: -webkit-radial-gradient(bottom left,circle, grey, black);*/
+}
+.kb-h {height: 0px!important;}
+.kb-key {
+	/*margin: 2px;*/
+	margin: 1px;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	/*font-family: shaonv;*/
+	-webkit-transition:background-color 0.5s;
+	/*font-family: cursive;*/
+	/*font-family: 微软雅黑;*/
+	/*font-family: asia;*/
+
+	/*black*/
+/*	background-color: #383838;
+	box-shadow: 0px 0px 3px #ccc;
+	text-shadow: 1px 1px 1px #CCC;
+	color:white;
+	font-size : 45px;
+	border-radius: 0px;*/
+	
+	/*white*/
+/*	background-color: #F8F8F8;
+	box-shadow: 0px 2px 2px black, inset 2px -2px 6px #BBD1DF;
+	text-shadow: 0px -1px 1px white;
+	color:black;
+	font-size : 49px;
+	border-radius: 4px;*/
+
+	/*blue*/
+/*	background-color: #D4E5EE;
+	box-shadow: 0px 2px 2px black, inset 2px -2px 6px #BBD4E3;
+	text-shadow: 0px 1px 1px black;
+	color: #696969;
+	font-size : 44px;
+	border-radius: 4px;*/
+
+	/**/
+/*	background-color: black;
+	text-shadow: 0px 1px 1px black;
+	border-right:1px solid white;
+	border-top:1px solid white;
+	color: #CCC;
+	font-size : 44px;
+	*/
+	/*dian blue*/
+/*	background-color: #253A4C;
+	box-shadow: inset 1px 1px 1px #4C6679,inset 0px -1px 1px #293F52;
+	text-shadow: 0px 1px 1px black;
+	color: white;
+	font-size : 44px;
+	border-radius: 0px;
+	opacity: 0.7;*/
+}
+.kb-input{
+	height: 60px;
+	line-height: 60px;
+	font-size: 45px;
+	text-align: left;
+	/*black*/
+	color:black;
+	/*white*/
+	color:white;
+}
+.kb-smf {
+	font-size: 35px!important;
+}
+.kb-key.on {
+
+	/*box-shadow:inset 0px 0px 20px black!important;*/
+	background-color: steelblue!important;
+	-webkit-transition:background-color 0s!important;
+	border-radius: 3px;
+
+}
+.ky-zIndex {z-index: 2;}
+.kb-wd {width: 30%;}
+.kb-btm {position: absolute;bottom: 0px;width: 100%;}

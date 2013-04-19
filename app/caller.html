@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			overflow: hidden;
+			padding: 0;
+			margin: 0;
+		}
+		#caller {
+			position: relative;
+			width: 99%;
+			margin: auto;
+			margin-bottom: 0px;
+		}
+		#keyboard {
+			position: fixed;
+			height: 260px;
+			width: 100%;
+			bottom: 100px;
+		}
+/*		#keyboardLast {
+			height: 210px;
+		}*/
+/*		#keys {
+			height: 210px;
+		}*/
+		.key-col {
+			width: 100%;
+			height: 60px;
+			/*display: block;*/
+			/*float: left;*/
+		}
+		.key-num {
+			height: 100%;
+			width: 33%;
+			box-shadow: 1px 1px 5px black;
+			float: left;
+			text-align: center;
+			line-height: 50px;
+			font-size: 45px;
+
+		}
+		.wd-half {
+			width: 49.5%;
+		}
+		#input-number {
+			line-height: 50px;
+			font-size: 45px;
+			text-align: center;
+			box-shadow: 1px 1px 5px black;
+		}
+	</style>
+</head>
+<body>
+<!-- 	<div id="header">
+		<div id="keyboardTag" class="tag"></div>
+		<div id="contactTag" class="tag"></div>
+		<div id="recordTag" class="tag"></div>
+	</div> -->
+	<div id='caller'>
+		<div id="keyboard" >
+			<div id='input-number' class='key-col'></div>
+			<div id="keys">
+			</div>
+			<div id="keyboardLast" class="key-col">
+				<div id="callKey" class='key-num wd-half'>C</div>
+				<div id="delete" class='key-num wd-half'>D</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		var keyArray = [];
+			keyArray.push(['1','2','3']);
+			keyArray.push(['4','5','6']);
+			keyArray.push(['7','8','9']);
+			keyArray.push(['*','0','#']);
+		var docFrag = document.createDocumentFragment();
+		for (var i = 0, len = keyArray.length; i<len; i++) {
+			var col = document.createElement('div');
+				col.className = 'key-col';
+			for (var k = 0, cLen = keyArray[i].length; k < cLen; k++) {
+				var key = document.createElement('div');
+					key.className = 'key-num';
+					key.innerHTML = keyArray[i][k];
+					key.setAttribute('data-value',keyArray[i][k]);
+					col.appendChild(key);
+
+			};
+		
+			docFrag.appendChild(col);
+		}
+		document.querySelector('#keys').appendChild(docFrag);
+	</script>
+
+
+	<script type="text/javascript">
+		window.Caller = window.Caller || {};
+		var bridge =  {
+			'call' : function (number) {
+				console.log('call~~~~~~~~~~~~~~~~ : ' + number);
+			}
+		}
+		var callKey = document.querySelector('#callKey');
+		var deleteKey = document.querySelector('#delete');
+		callKey.onclick = function () {
+			Caller.call('123123');
+		}
+
+		keys.onclick = function (e) {
+			console.log(e.target.getAttribute('data-value'));
+			var inputNumber = document.querySelector('#input-number');
+			inputNumber.innerHTML += e.target.getAttribute('data-value');
+			inputNumber.setAttribute('data-value', inputNumber.innerHTML);
+		}
+		deleteKey.onclick = function (e) {
+			var inputNumber = document.querySelector('#input-number');
+			var value = inputNumber.getAttribute('data-value');
+			if (!value || value.length <=0) return;
+			var newValue = value.slice(0,value.length-1);
+			inputNumber.setAttribute('data-value', newValue);
+			inputNumber.innerHTML = newValue;
+		}
+		window.android = window.android || bridge;
+		(function () {
+			Caller.call = function (number) {
+				android.call(number)
+			}
+		}());
+	</script>
+</body>
+</html>

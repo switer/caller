@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+	<title></title>
+	<script type="text/javascript" src="../common/zepto.js"></script>
+	<script type="text/javascript" src="../common/underscore.js"></script>
+	<script type="text/javascript" src="../common/framework.js"></script>
+	<script type="text/javascript" src="../common/touch.js"></script>
+	<script type="text/javascript" src="../base/initialize.js"></script>
+	<!--<script type="text/javascript" src="../base/bridge.js"></script>-->
+	<script type="text/javascript" src="../base/skins.js"></script>
+	<script type="text/javascript" src="../src/caller/controller.js"></script>
+	<script type="text/javascript" src="../src/caller/model.js"></script>
+	<script type="text/javascript" src="../src/caller/view.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+<head>
+<body>
+	<div id="container" class="fb-box"></div>
+	<div id="">
+	<script type="text/html" id="keyboardTempl">
+		<div id="contactLog" style="height:100%;position:absolute;top:0px;width:100%;color:white;">
+			<div id="addContact" style="width:60%;position:relative;margin:auto;height:60px;text-align:center;background-color:#253A4C;vertical-align:middle;line-height:60px;">添加联系人</div>
+		</div>
+		<div class="kb-bg kb-btm ky-zIndex  fb-p1" id="keyboard">
+			<div class="fb-box">
+				<div class="kb-input fb-p1" id="numberLine" data-value=""></div>
+			</div>
+			<div class="fb-box">
+				<div class="kb-key kb-wd kb-key-num" data-value="1" data-down="true">1</div>
+				<div class="kb-key kb-wd kb-key-num fb-p1" data-value="2" data-down="true">2</div>
+				<div class="kb-key kb-wd kb-key-num" data-value="3" data-down="true">3</div>
+			</div>
+			<div class="fb-box">
+				<div class="kb-key kb-wd kb-key-num" data-value="4" data-down="true">4</div>
+				<div class="kb-key kb-wd kb-key-num fb-p1" data-value="5" data-down="true">5</div>
+				<div class="kb-key kb-wd kb-key-num" data-value="6" data-down="true">6</div>
+
+			</div>
+			<div class="fb-box">
+				<div class="kb-key kb-wd kb-key-num" data-value="7" data-down="true">7</div>
+				<div class="kb-key kb-wd kb-key-num fb-p1" data-value="8" data-down="true">8</div>
+				<div class="kb-key kb-wd kb-key-num" data-value="9" data-down="true">9</div>
+			</div>
+			<div class="fb-box">
+				<div class="kb-key kb-wd kb-key-num" data-value="*" data-down="true">*</div>
+				<div class="kb-key kb-wd kb-key-num fb-p1" data-value="0" data-other="+" data-down="true">0</div>
+				<div class="kb-key kb-wd kb-key-num" data-value="#" data-down="true">#</div>
+			</div>
+			<div class="fb-box">
+				<div id="callKey" class="kb-key kb-wd fb-p1" data-down="true">
+					<img src="img/phone.png" class="kb-key-icon" /></div>
+				<div id="delete" class="kb-key kb-wd kb-delete bg-center" data-down="true">
+				
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/javascript">
+	$(document).ready(function () {
+		S.start('Caller');
+	})
+
+	</script>
+</body>
+</html>
