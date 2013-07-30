@@ -40,7 +40,7 @@ S.app.Caller.module.CallerView = Framework.View.extend(function () {
 			$(document.body).on('touchstart', function (e) {
 				e.preventDefault();
 			})
-			var selSkin = 'sogou';
+			var selSkin = 'white';
 			var keySkin = skins[selSkin]["key"],
 				keyboardSkin = skinbackground['keyboardBackground'][skins[selSkin]["keyboardBackground"]],
 				globalBackground = skinbackground['globalBackground'][skins[selSkin]["globalBackground"]];
@@ -54,10 +54,8 @@ S.app.Caller.module.CallerView = Framework.View.extend(function () {
 			var scale = window.screen.width / document.body.clientWidth;
 
 			Touch.on(document,'start', function (e) {
-				console.log('touchstart');
-				console.log('width :' + document.body.clientWidth);
-				console.log('in webview : x :' +e.touches[0].pageX*scale + ' Y:' + e.touches[0].pageY*scale);
 				window.targets = window.targets || [];
+				e.preventDefault();
 				if ($(e.target).attr('data-down') ==="true") {
 					$(e.target).addClass('on');
 					window.targets.push(e.target);
